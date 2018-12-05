@@ -8,19 +8,45 @@ var openFile = function(event) {
     var md_content;
     
     var reader = new FileReader();
-    reader.onload = function(){
-        var md_content = reader.result;
-        var html_course = convert_md_to_ochtml(md_content);
-        //document.getElementById('md-content').innerText = md_content;
-        document.getElementById('html-course').innerText = html_course;
-        document.getElementById('rendered-course').innerHTML = html_course;
-    console.log(md_content);
-    };
-    
-    reader.readAsText(input.files[0]);
 
+    var md_content = "";
+    var html_course;
+    var reader = new FileReader();  
+    function readFile(index) {
+        if( index >= input.files.length ) return;
+        var file = input.files[index];
+        reader.onload = function(e) {  
+            // get file content 
+            md_content += e.target.result + "\n\n";
 
+            readFile(index+1);
+
+            html_course = convert_md_to_ochtml(md_content);
+            document.getElementById('html-course').innerText = html_course;
+            document.getElementById('rendered-course').innerHTML = html_course;
+        }
+        reader.readAsText(file);
+    }
+    readFile(0);
 };
+
+
+function readmultifiles(files) {
+  var reader = new FileReader();  
+  function readFile(index) {
+    if( index >= files.length ) return;
+    var file = files[index];
+    reader.onload = function(e) {  
+      // get file content  
+      var bin = e.target.result;
+      console.log(bin);
+      // do sth with bin
+      readFile(index+1)
+    }
+    reader.readAsText(file);
+  }
+  readFile(0);
+}
 
 
 /**
