@@ -9,25 +9,13 @@
     <p>Drive API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" style="display: none;">Authorize</button>
-    <button id="signout_button" style="display: none;">Sign Out</button>
+    <button id="authorize_button">Authorize</button>
+    <button id="signout_button">Sign Out</button>
     <button id="print_file_button" onclick="printFile()">Print File</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
     <script type="text/javascript">
-      function printFile() {
-        console.log("print");
-        var fileId = '1np3cz8oFKhAbh-cFyw1Lj6nbcFmj00au';
-        var request = gapi.client.drive.files.get({
-          'fileId': fileId
-        });
-        request.execute(function(resp) {
-          console.log('Title: ' + resp.title);
-          console.log('Description: ' + resp.description);
-          console.log('MIME type: ' + resp.mimeType);
-        });
-      }
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"

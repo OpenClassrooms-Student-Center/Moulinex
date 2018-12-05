@@ -118,16 +118,39 @@ function printFile() {
 
 
   console.log("print");
-  var fileId = '1caLdcPi975oQQVHEVDnKSfFDVNR3E4MSnRqc7rokzXo';
-  var request = gapi.client.drive.files.get({
-    'fileId': fileId,
-    'supportsTeamDrives': true
-  });
-  request.execute(function(resp) {
-    console.log('Title: ' + resp.title);
-    console.log('Description: ' + resp.description);
-    console.log('MIME type: ' + resp.mimeType);
-  });
+  // var fileId = '1VGDwJ7bjAtALcQrwBDt1WwekJjLbatprL_OUqZzNA14';
+  // var request = gapi.client.drive.files.get({
+  //   'fileId': fileId,
+  //   'supportsTeamDrives': true
+  // });
+  // console.log(request.result);
+  // request.execute(function(resp) {
+  //   console.log('Title: ' + resp.title);
+  //   console.log('Description: ' + resp.description);
+  //   console.log('MIME type: ' + resp.mimeType);
+  // });
+
+
+  gapi.client.request({
+    'path': '/drive/v2/files/'+'1VGDwJ7bjAtALcQrwBDt1WwekJjLbatprL_OUqZzNA14',
+    'method': 'GET',
+    callback: function ( theResponseJS, theResponseTXT ) {
+        var myToken = gapi.auth.getToken();
+        var myXHR   = new XMLHttpRequest();
+        myXHR.open('GET', theResponseJS.downloadUrl, true );
+        myXHR.setRequestHeader('Authorization', 'Bearer ' + myToken.access_token );
+        myXHR.onreadystatechange = function( theProgressEvent ) {
+            if (myXHR.readyState == 4) {
+//          1=connection ok, 2=Request received, 3=running, 4=terminated
+                if ( myXHR.status == 200 ) {
+//              200=OK
+                    console.log( myXHR.response );
+                }
+            }
+        }
+        myXHR.send();
+    }
+});
 }
 
 
@@ -149,4 +172,22 @@ function downloadFile(file, callback) {
   } else {
     callback(null);
   }
+
+
+
+  // if (file.downloadUrl) {
+  //   var accessToken = gapi.auth.getToken().access_token;
+  //   var xhr = new XMLHttpRequest();
+  //   xhr.open('GET', file.downloadUrl);
+  //   xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+  //   xhr.onload = function() {
+  //     callback(xhr.responseText);
+  //   };
+  //   xhr.onerror = function() {
+  //     callback(null);
+  //   };
+  //   xhr.send();
+  // } else {
+  //   callback(null);
+  // }
 }
