@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drive API Quickstart</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js"></script>
+    <script type="text/javascript" src="moulinex.js"></script>
+    <script src="claire.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Moulinex web</h1>
+
+    <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+    <output id="list"></output>
+
+
+    <div id="md-content"></div>
+    <div class="wrapper">
+      <div id="rendered-course" class="bloc1">This is going to be the preview of your course (with no styling).</div>  
+      <div>
+        <div class="tooltip">
+        <button class="copy-button" onclick="copyTextToClipboard()" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy HTML to clipboard</span>
+          <i class="copy-icon fas fa-copy"></i>
+          </button>
+        </div>
+        <p id="html-course" class="bloc2">This is going to be the raw HTML of you course that you will be able to copy and paste to your course page. You can use the copy button on the left.</p>
+      </div>
+    </div>
+    
+    
+    <script type="text/javascript">
+        
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
+</html>

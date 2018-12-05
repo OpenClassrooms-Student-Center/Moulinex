@@ -1,0 +1,85 @@
+.wrapper {
+
+    margin: 0 auto;
+}
+
+.bloc1 {
+    float:left;
+    background-color: #F5F5F5;
+    margin: 10px 20px;
+    padding: 20px;
+    width: 600px;
+    overflow: scroll;
+}
+
+.bloc2
+{
+    float:right;
+    background-color: #F5F5F5;
+    margin: 10px 20px;
+    padding: 20px;
+    width: 600px;
+    overflow: scroll;
+
+    font-family: 'Consolas';
+}
+
+p.bloc2 { 
+	font-family: Consolas, monaco, monospace; 
+	font-size: 14px; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 400; 
+	line-height: 20px; 
+}
+
+
+/* Tooltip button style (the button that copies the text to the clipboard) */ 
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.copy-button {
+	border-radius: 5px;
+	padding:10px;
+}
+
+.copy-icon {
+	font-size: 30px;
+	color:;
+}
