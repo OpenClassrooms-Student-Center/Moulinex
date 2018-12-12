@@ -1,0 +1,111 @@
+body {
+    counter-reset: h1 h2 h3 h4 h5 h6;
+}
+
+.course-content {
+    margin-left: 70px;
+    padding: 20px;
+    width: 685px;
+    border: 1px solid #DDDDDD;
+}
+
+
+li.toc-level-1::before {
+    content: " course title : ";
+}
+
+li.toc-level-2::before {
+    content: " part : ";
+}
+
+li.toc-level-3::before {
+    content: " chapter : ";
+}
+
+li.toc-level-4::before {
+    content: " section : ";
+}
+
+
+h2::before {
+    counter-increment: h2;
+    content: counter(h2);
+}
+h3::before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3);
+}
+h4::before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4);
+}
+h5::before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+}
+h6::before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+}
+h2::before, h3::before, h4::before, h5::before, h6::before {
+    position: absolute;
+    width: 70px;
+    margin-left: -90px;
+}
+h2 {
+    counter-reset: h3 h4 h5 h6;
+}
+h3 {
+    counter-reset: h4 h5 h6;
+}
+h4 {
+    counter-reset: h5 h6;
+}
+h5 {
+    counter-reset: h6;
+}
+
+
+
+#toc {
+    position: fixed;
+    top: 5px;
+    right:5px;
+    bottom: 5px;
+    overflow: auto;
+    padding: 5px;
+    border: 1px dashed #E3B47E;
+}
+
+#toc a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#toc .toc-level-1 {
+    color: #e95325;
+    font-weight: 300;
+    font-size: 2.6rem;
+    border-bottom: 1px solid #bebebe;
+    padding-bottom: 10px;
+}
+
+#toc .toc-level-2 {
+    line-height: 32px;
+    color: #e95325;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+
+#toc .toc-level-3 {
+    line-height: 32px;
+    color: #e95325;
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+
+#toc .toc-level-4 {
+    font-weight: 600;
+}

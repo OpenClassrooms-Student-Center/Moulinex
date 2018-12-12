@@ -1,4 +1,3 @@
-
 /**
 * Open the file selected by the user 
 * and convert its content to print it on the page.
@@ -23,30 +22,15 @@ var openFile = function(event) {
 
             html_course = convert_md_to_ochtml(md_content);
             document.getElementById('html-course').innerText = html_course;
-            document.getElementById('rendered-course').innerHTML = html_course;
+            document.getElementById('course-content').innerHTML = html_course;
         }
         reader.readAsText(file);
     }
     readFile(0);
+
+    setTimeout(loadContent, 1000);
+
 };
-
-
-function readmultifiles(files) {
-  var reader = new FileReader();  
-  function readFile(index) {
-    if( index >= files.length ) return;
-    var file = files[index];
-    reader.onload = function(e) {  
-      // get file content  
-      var bin = e.target.result;
-      console.log(bin);
-      // do sth with bin
-      readFile(index+1)
-    }
-    reader.readAsText(file);
-  }
-  readFile(0);
-}
 
 
 /**
@@ -79,21 +63,4 @@ function copyTextToClipboard() {
 
     /* Copy the text to the clipboard */
     document.execCommand("copy");
-
-    /* Alert the copied text */
-    alert("Your course was copied to your clipboard.");
-}
-
-function myFunction() {
-  var copyText = document.getElementById("myInput");
-  copyText.select();
-  document.execCommand("copy");
-  
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied: " + copyText.value;
-}
-
-function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy to clipboard";
 }

@@ -9,29 +9,55 @@
     <script src="claire.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <link href="style/masterEdit.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="style/content.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="js/jquery-ui-1.12.1.custom/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+    <link href="style/preview.css" type="text/css" rel="stylesheet" media="all" />
   </head>
   <body>
-    <h1>Moulinex web</h1>
 
+    <h1 class="hide-from-toc">Moulinex - Translate your Markdown course into an OC HTML course</h1>
     <input type='file' accept='text/plain' onchange='openFile(event)' multiple><br>
     <output id="list"></output>
 
 
-    <div id="md-content"></div>
-    <div class="wrapper">
-      <div id="rendered-course" class="bloc1">This is going to be the preview of your course (with no styling).</div>  
-      <div>
-        <div class="tooltip">
-        <button class="copy-button" onclick="copyTextToClipboard()" onmouseout="outFunc()">
-          <span class="tooltiptext" id="myTooltip">Copy HTML to clipboard</span>
-          <i class="copy-icon fas fa-copy"></i>
-          </button>
-        </div>
-        <p id="html-course" class="bloc2">This is going to be the raw HTML of you course that you will be able to copy and paste to your course page. You can use the copy button on the left.</p>
+    <div style="display: none;">
+      <p id="html-course">This is going to be the raw HTML of you course that you will be able to copy and paste to your course page. You can use the copy button on the left.</p>
+    </div>
+
+
+    <button class="copy-button" onclick="copyTextToClipboard()">
+      <i class="copy-icon fas fa-copy"></i>
+      <span>Copy HTML to clipboard</span>
+    </button>
+
+    <div class="projectContent small-course">
+      <div id="course-content" class="course-content">
+        <!-- Content of the course will end up here -->
+        <h1>This is going to be the content of your course.</h1>
       </div>
     </div>
-    
-    
+
+    <div id="toc">
+      <span class="ui-icon ui-icon-close" onclick="jQuery('#toc').hide()"></span>
+      <!-- The table of content will end up here -->
+    </div>
+
+    <div id="dialog-chapter-extract" style="display: none;">
+      <div class="projectContent small-course">
+        <div class="course-content">
+          <div id="chapter-extract"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+        
     <script type="text/javascript">
         
     </script>

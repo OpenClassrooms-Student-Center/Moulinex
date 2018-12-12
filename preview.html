@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style/masterEdit.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="style/content.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="js/jquery-ui-1.12.1.custom/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+    <link href="style/preview.css" type="text/css" rel="stylesheet" media="all" />
+    <title>Moulinex - OpenClassrooms Course Preview</title>
+</head>
+<body>
+<div class="projectContent small-course"><div class="course-content">
+
+<!-- ===== COPY HTML FROM HERE ===== -->
+<p>Bonjour, et bienvenue dans ce cours !</p>
+<p>Je suis Ismaël, Consultant IT Service Delivery.</p>
+<p>Aujourd’hui, je vais vous apprendre à mettre en place de bonnes pratiques, afin de sécuriser le déploiement de votre SI.<br />
+En tant qu’Administrateur Système/cloud, vous aurez à planifier des changements dans votre SI (installation/désinstallation, mise à jour, migration…). La meilleure façon de le faire sans générer d’incident de production ou carrément de rupture de service, c’est de mettre en place une procédure qui sécurise toutes vos actions.</p>
+<div data-claire-semantic="question"><p>Oui mais par où commencer? 
+  Où trouver des conseils et recommandations utiles pour son SI?</p>
+</div>
+<p>Ne serait-il pas génial si vous aviez les recettes et conseils d’experts (un peu à la manière d’un livre de cuisine) ? Ne cherchez plus. Ces livres existent et s’appellent <strong>ITIL</strong>®.</p>
+<p>ITIL® s’est imposé aujourd’hui comme étant “THE” référence, tant ses conseils couvrent de bout en bout un service IT.</p>
+<p>Rejoignez-moi dans ce cours et vous apprendrez à déployer votre SI en toute sécurité, en se basant sur les recommandations de ITIL®.</p>
+<aside data-claire-semantic="information"><p>Voici les objectifs de ce cours :</p>
+  <ul>
+  <li>découvrez les concepts de bases qui structurent ce référentiel de bonnes pratiques.</li>
+  <li>apprenez à mettre en place une procédure qui sécurise le déploiement d’un SI.</li>
+  <li>formulez une RFC (demande de changement).</li>
+  <li>apprenez à sécuriser un déploiement</li>
+  <li>découvrez comment mettre en œuvre ces bonnes pratiques dans votre nouvelle vie d’administrateur Cloud système.</li>
+  </ul>
+</aside>
+<p>Avec ce cours, vous saurez déployer sereinement votre SI comme un professionnel, en évitant une rupture de service.</p>
+<p>Prêt ? Alors inscrivez vous !</p>
+<aside data-claire-semantic="warning"><p>Ce cours ne prépare en aucun cas aux différentes certifications ITIL, mais il vous permet de maîtriser ses concepts de bases pour que vous puissiez les intégrer lors du déploiement de votre SI.</p>
+</aside>
+<h1>Mettez en place les bonnes pratiques ITIL</h1>
+<h2>Adoptez un référentiel de bonnes pratiques ITIL</h2>
+<h3>Comprenez ITIL</h3>
+<p>Dans la première partie de ce cours, je vous ferai découvrir le référentiel de <strong>bonnes pratiques ITIL</strong>, ainsi que son vocabulaire. Ensuite, je vous montrerai comment il s’articule autour de ses <strong>concepts clés</strong>.</p>
+<p>Dans ce chapitre, je vous propose de découvrir ce qu’est ITIL. Vous verrez son principe de fonctionnement et pourquoi les entreprises l’utilise.</p>
+<h4>Découvrez ITIL</h4>
+<aside data-claire-semantic="information"><p>ITIL signifie <em>Information Technology Infrastructure Library</em>. En français, on traduirait par <em>Bibliothèque pour l'infrastructure des technologies de l'information</em> 🤔.</p>
+  <p><strong>:question:</strong> Et donc, c’est quoi ITIL ?</p>
+</aside>
+<p>ITIL, c’est un ensemble de <strong>5 ouvrages</strong> appelés aussi des <strong>publications</strong> (c’est d’ailleurs pour ça qu’on parle de bibliothèque 😉).</p>
+<p>Ces publications contiennent des <strong>recommandations</strong> qui sont des bonnes pratiques pour mieux <strong>gérer votre service IT</strong>. Vous y trouverez les bonnes manières de faire les choses (du genre qu’il faut mettre les céréales avant le lait 😱).</p>
+<p>On parle de <strong>bonnes pratiques</strong> car elles ont été testées et validées par des experts de différents types d’organisations.</p>
+<p>Ces livres couvrent et détaillent tous les aspects de la gestion d’un service IT.</p>
+<p>ITIL aborde</p>
+<ul>
+<li>la mise en place de la <strong>stratégie</strong> de ce service (objectifs, définition du périmètre)</li>
+<li>la <strong>conception</strong> d’un service IT (disponibilité, capacité, sécurité, coûts…)</li>
+<li>le <strong>déploiement</strong> d’un service (mise en oeuvre, test, déploiement)</li>
+<li>la <strong>gestion opérationnelle</strong> (incidents, problèmes, gestions des accès…)</li>
+<li><strong>l’amélioration en continu</strong> du service (audit, analyse des forces et faiblesses)</li>
+</ul>
+<div data-claire-semantic="question"><p>Et donc, c’est quoi précisément un service ?</p>
+</div>
+<p>Ici le terme Service IT ne signifie pas “département informatique d’une société”. Il désigne plutôt <strong>un service fourni à l’aide de la technologie</strong> : un accès à internet, un service messagerie, de la téléphonie, un site web, une application web…</p>
+<p>Ce référentiel de bonnes pratiques a été développé par l'<em>Office of Government Commerce</em> britannique au cours des années 1980. Il comprenait à l'origine plus de 30 publications.</p>
+<p>Il a été révisé et amélioré au fil du temps, et la dernière version, (ITIL v3) a été publiée en 2007 et mise à jour en 2011.</p>
+<p>ITIL est aujourd’hui <em>LA référence</em> pour de nombreuses organisations et entreprises : secteur public ou privé, de l’entreprise du CAC 40 à la petite start-up en croissance.</p>
+<h4>Comment ça marche?</h4>
+<p>La méthodologie éprouvée d'ITIL est liée à son <strong>approche par les processus, fonctions et rôles</strong> (ou responsabilités). Cela veut dire que :</p>
+<ol>
+<li>Il y a au total <strong>26 processus</strong> qui vous expliquent <em>comment</em> faire. Il existe aussi bien un processus pour gérer les incidents qui arrivent au service desk (le support), qu’un processus pour gérer les coûts ou tester et valider un service avant de le déployer.</li>
+<li>Vous y trouverez le détail des <strong>fonctions et rôles</strong>, c'est à dire <em>qui fait quoi</em>.</li>
+<li>Il suffit enfin de mettre ensemble les pièces du puzzle en s’accordant et en définissant <em>qui fait quoi et comment</em> ;)</li>
+</ol>
+<p>En vous organisant de cette façon, vous travaillez de <strong>manière cohérente</strong> et avec <strong>précision</strong>.</p>
+<div data-claire-semantic="question"><p>Et c’est aussi simple que cela ?</p>
+</div>
+<p>Eh bien <strong>oui</strong>. Dans les chapitres suivants, je définirai avec vous certains <strong>termes essentiels</strong>, puis vous découvrirez en détail le <strong>fonctionnement de ITIL</strong>.</p>
+<h4>Mais quels sont les bénéfices d’ITIL ?</h4>
+<p>Adopter un référentiel tel que ITIL va vous permettre <strong>d’améliorer la gestion de votre service IT.</strong></p>
+<p>ITIL se concentre sur la valeur du service fourni : les <strong>résultats</strong> et non les outils.</p>
+<p>Plus précisément, il peut permettre plusieurs choses :</p>
+<ul>
+<li><strong>Aligner les besoins des utilisateurs avec la technique.</strong> Si vous ne savez pas où vous allez, vous n’y arriverez jamais ! Partant des <strong>besoins des utilisateurs</strong>, vous pourrez répondre efficacement à leurs besoins. Il fournit des processus pour assurer un <strong>service efficace de bout en bout</strong>, plutôt que de ne répondre qu’aux sollicitations des utilisateurs du SI.</li>
+<li><strong>Améliorer la qualité du service fourni</strong>. En introduisant un ensemble cohérent de processus, vous identifierez les <strong>problèmes</strong> et les <strong>faiblesses</strong> potentiels SI. Cela vous permettra d’améliorer votre <strong>qualité de service</strong>. Si vous savez qui fait quoi et comment, vous pouvez facilement mettre la main sur les faiblesses de votre organisation et donc optimiser le comment, le qui ou le quoi.</li>
+<li><strong>Réduire les coûts</strong>. ITIL permet de s’assurer que vous pouvez délivrer un service dont vous pouvez <strong>supporter le coût</strong>. En créant des <strong>modèles de coûts</strong> (coûts directs, indirects), vous vous assurez de fournir un service dont le coût est quantifiable.</li>
+<li><strong>Il est facilement transposable aux pratiques existantes d’une entreprise</strong>. Une norme est un ensemble d'exigences à mettre en place afin d’atteindre un standard. Mais, ITIL n’est pas une norme, <strong>ces recommandations ne sont pas des exigences</strong>. Elles doivent être adaptées à votre organisation et pratiques existantes.</li>
+</ul>
+<div data-claire-semantic="question"><p>Bon à savoir ! Les bonnes pratiques d’ITIL sont à l’origine de la première norme de gestion des services informatiques (BS15000), qui date de 2003.</p>
+</div>
+<h4>En résumé</h4>
+<aside data-claire-semantic="information"><p></p>
+  <ul>
+  <li>ITIL® est une bibliothèque de 5 ouvrages recensant les bonnes &gt;pratiques dans la gestion d’un service IT</li>
+  <li>Ces bonnes pratiques représentent les expériences d’apprentissage de professionnels et d’experts dans le domaine informatique</li>
+  <li>Sa méthodologie s’articule autour de processus, fonctions et rôles en déterminant qui fait quoi et comment</li>
+  <li>Une norme est un standard qui doit être atteint et maintenue, quand ITIL® propose un ensemble de connaissances utiles et adaptables pour atteindre ce standard.</li>
+  <li>ITIL® permet d’améliorer la qualité d’un service IT, de réduire les coûts et d’aligner les besoins des utilisateurs avec la technique.</li>
+  </ul>
+</aside>
+<p>Maintenant que vous avez compris ce qu’est le référentiel ITIL dans ses grandes lignes, je vous propose dans le chapitre suivant, de vous apprendre certains termes et concepts clés qui font partie de son vocabulaire. A très vite !</p>
+<h3>Maîtrisez la terminologie ITIL</h3>
+<p>Comme nous l’avons vu précédemment, le référentiel de bonnes pratiques ITIL propose un ensemble de <strong>connaissances pratiques et utiles dans la gestion d’un service IT</strong>. Mais avant d’aller plus loin, vous devez maîtriser certains termes et concepts clés de ce référentiel. Ils sont aujourd’hui largement utilisés dans le monde professionnel et ce vocabulaire est utilisé dans toutes les DSI. Alors, prêt à apprendre à parler ITIL ? 😉</p>
+<div data-claire-semantic="question"><p>Comme je vous l’ai présenté dans le chapitre précédent, le référentiel
+  de bonnes pratiques ITIL se base sur:</p>
+  <ul>
+  <li>des <strong>processus</strong>,</li>
+  <li>des <strong>fonctions</strong>,</li>
+  <li>des <strong>rôles</strong>. Depuis sa mise à jour V3, le référentiel a également introduit le concept de <strong>cycle de vie d’un service</strong>. Maintenant,
+  prenons un moment pour bien définir ces concepts.</li>
+  </ul>
+</div>
+<h4>Processus</h4>
+<p>Commençons par définir les processus.</p>
+<div data-claire-semantic="question"><p>C’est quoi un processus ?</p>
+  <p><strong>:information_source:</strong> Un processus est une suite d’activités <strong>coordonnées</strong> qui met en œuvre des <strong>ressources</strong> et <strong>aptitudes</strong> afin de délivrer un <strong>résultat</strong> à un client.</p>
+</div>
+<p>Plus simplement, il s’agit d’une suite d’activités qui s’exécutent de manière à <strong>réaliser une tâche.</strong></p>
+<p>Pensez à une recette qui détaille les différentes étapes à réaliser pour obtenir disons… une bonne blanquette de veau😛. Les différentes étapes nécessaires à la réalisation de notre blanquette constituent un processus.</p>
+<p><img src="https://lh3.googleusercontent.com/7wIbXNtQHu93_JPO4Lw-EHpgvPm-N0jDghX9zbFBCzu2pYYrsyMmsfilTlxicJvtxa6v2WTCF3gF0mJclvQrGL_pioU6Xcp6wGPBY-wDRNia4-JiX_pHOF0CfRsNoOniuwPq1Qwi" alt="../../Desktop/Capture%20d’écran%202018-04-18%20à%2009.25.05.png" /><br />
+Capture d’écran Google sur recherche: “Recette blanquette de veau”</p>
+<p>Un processus transforme donc un ou <strong>plusieurs éléments d’entrée en élément de sortie</strong> en suivant un objectif : vous combinez viande, légumes et autres ingrédients… pour obtenir une blanquette de veau (miam) !</p>
+<p>Un processus est mesurable :</p>
+<ol>
+<li><strong>quantitativement</strong></li>
+<li><strong>qualitativement</strong></li>
+</ol>
+<p>Vous devez être capable d’évaluer le <strong>coût</strong> et la <strong>qualité</strong> des ingrédients qui entrent dans votre recette de blanquette de veau. Si vous pouvez le mesurer, vous pouvez l’améliorer.</p>
+<p>En IT c’est pareil, en maîtrisant le nombre et le type <strong>d’incidents</strong> ainsi que la satisfaction du client à la fermeture du ticket incident, vous pourrez améliorer votre processus de gestion des incidents.</p>
+<h4>Fonctions</h4>
+<p>L’autre élément clé dans ce référentiel de bonnes pratiques est la notion de <strong>fonctions</strong>. Il s’agit des intervenants qui exécutent les activités d’un processus. C’est-à-dire :</p>
+<ul>
+<li>les personnes,</li>
+<li>les équipes,</li>
+<li>les outils.</li>
+</ul>
+<p>Dans le cas de notre blanquette, les fonctions vont combiner gestes et automatismes pour exécuter notre processus (notre recette).</p>
+<p>Dans une grande organisation, ces fonctions peuvent être éclatées en <strong>départements</strong>. </p>
+<blockquote>
+  <p>Pour notre exemple, dans un grand restaurant nous aurons :</p>
+  <ul>
+  <li>La plonge ;</li>
+  <li>La brigade (les commis + le chef) ;</li>
+  <li>L’électroménager ;</li>
+  <li>La salle (les serveurs et le maître d’hôtel).</li>
+  </ul>
+</blockquote>
+<p>Ramené à une DSI, les fonctions peuvent être représentées par :</p>
+<ul>
+<li>le <strong>management</strong> ;</li>
+<li>les <strong>développeurs</strong> ;</li>
+<li><strong>l’exploitation</strong> (admin système) ;</li>
+<li>le <strong>support niveau 1</strong> ;</li>
+<li>le <strong>support niveau 2</strong> ;</li>
+<li>les <strong>fournisseurs</strong> externes ;</li>
+<li>l’outils de <strong>ticketing</strong> utilisé pour traiter les dossiers ;</li>
+<li>La <strong>ligne téléphonique</strong>.</li>
+</ul>
+<h4>Rôles</h4>
+<aside data-claire-semantic="information"><p>A chaque fonction, on attribue un ou plusieurs <strong>rôles</strong>. Un rôle est
+  un ensemble de responsabilités, d’activités et d’autorités attribuées
+  à une personne ou une équipe dans un contexte spécifique. On associe
+  donc un rôle à une fonction !</p>
+  <p>Appliqué à notre restaurant, cela reviendrait à :</p>
+  <ul>
+  <li>La plonge a pour rôle de préparer les ustensiles</li>
+  <li>La brigade a pour rôle préparer les ingrédients</li>
+  <li>L’électroménager à pour rôle de cuire les aliments</li>
+  <li>Le chef qui contrôle la qualité des plats servis</li>
+  <li>Le serveur a pour rôle de nous livrer (enfin) notre blanquette</li>
+  </ul>
+</aside>
+<p>En IT, dans le processus de gestion des incidents, ce serait :</p>
+<ul>
+<li>le <strong>management</strong> a pour rôle <strong>coordonner le travail</strong> des équipes ;</li>
+<li>les <strong>développeurs</strong> ont pour rôle de <strong>coder les modifications</strong> qui corrigent l’incident ;</li>
+<li><strong>l’exploitation</strong> a pour rôle de <strong>superviser le SI et résoudre les incidents</strong> liés à l’infrastructure ;</li>
+<li>le <strong>support niveau 1</strong> a pour rôle d’effectuer une <strong>première analyse</strong> de l’incident ainsi que de <strong>communiquer</strong> avec les utilisateurs ; </li>
+<li>le <strong>support niveau 2</strong> a pour rôle d’effectuer un <strong>diagnostic technique</strong> de l’incident et de trouver sa cause ;</li>
+<li>les <strong>fournisseurs externes</strong> ont pour rôle de <strong>rétablir des services externalisés</strong> (accès internet, data center) ;</li>
+<li><strong>l’outil de ticketing</strong> a pour rôle de <strong>recueillir l’ensemble des informations</strong> relatives à l’incident ;</li>
+<li>La <strong>ligne téléphonique</strong> a pour rôle de <strong>permettre les échanges</strong> audio avec les utilisateurs ou entre les équipes.</li>
+</ul>
+<p>Une <strong>fonction</strong> peut se voir attribuer plusieurs <strong>rôles</strong>. Le support de niveau 1 pourra effectuer un diagnostic de 1er niveau et résoudre l’incident s’il en a la capacité par exemple.</p>
+<h4>Service</h4>
+<p>Autre terme important, le <strong>service</strong>.</p>
+<p>Un service est un moyen de fournir de la valeur aux clients en facilitant les résultats que les clients veulent atteindre <strong>sans en avoir la propriété des coûts et des risques</strong>. Vous comprenez ?</p>
+<div data-claire-semantic="question"><p>Oui mais, c’est quoi concrètement ?</p>
+</div>
+<p>Les gens ne veulent pas acheter une perceuse et un foret de 3 centimètres avec une queue cylindrique. Tout ce qu’ils veulent, c’est faire un trou de 3 centimètres dans le mur, donc trouver le moyen de le faire. <strong>Un service va leur permettre de le faire sans qu’ils aient à supporter le coût de la perceuse ou encore de savoir comment utiliser une perceuse</strong> (et donc éviter de se couper un doigt !).</p>
+<p>Dans l’IT, c’est pareil. En tant qu'administrateur système, <strong>vous offrirez de nombreux services aux utilisateurs</strong>, tels que la messagerie, le CRM, l'accès aux documents partagés. Les utilisateurs n’auront pas besoin de savoir que pour envoyer un mail, il faut mettre en place une infrastructure, des solutions de messagerie, des solutions réseau, du stockage…</p>
+<p><strong>En tant que fournisseur vous apportez de la valeur à un client via un service</strong>. Le client utilise le service afin d’attendre un résultat qui lui est propre. Cela moyennant rémunération… ou pas.</p>
+<aside data-claire-semantic="warning"><p>Dans la suite du cours, le terme service fera automatiquement référence à un service informatique ou service IT. A ne surtout PAS confondre avec le département informatique au sein de l’entreprise.</p>
+</aside>
+<p>Pour vous aider à bien comprendre, voici quelques exemples de ce qu’est un service IT dans ce cours :</p>
+<ul>
+<li>Le service IT fournit par un FAI est <strong>l’accès à internet</strong> ;</li>
+<li>Votre hébergeur cloud vous fourni comme service IT <strong>une infrastructure cloud</strong> ;</li>
+<li>En tant qu’administrateur système cloud, vous fournissez comme services informatiques <strong>un accès aux applications métier et aux mails</strong>. Vous êtes le fournisseur et vos clients sont les utilisateurs de ce service.</li>
+</ul>
+<p>Maintenant que nous avons défini un service, passons enfin au dernier point important dans ce guide de bonnes pratiques : le <strong>cycle de vie d’un service</strong> !</p>
+<h4>Cycle de vie d’un service</h4>
+<p>Il est temps d’aborder un concept <strong>fondamental</strong> : le cycle de vie d’un service.</p>
+<aside data-claire-semantic="information"><p>Le cycle de vie d’un service est constitué des différentes phases par lesquelles passe un service : depuis la première séance de brainstorming qui lance le projet, à son exploitation au quotidien.</p>
+</aside>
+<p>Dans ITIL, 5 phases/étapes constituent le cycle de vie d’un service, chacune étant traité dans une publication. Vous vous en souvenez probablement, le référentiel ITIL est constitué de 5 livres !</p>
+<p>Il s’agit de :</p>
+<ol>
+<li>La <strong>stratégie</strong> des services (Service Strategy) ;</li>
+<li>La <strong>conception</strong> des services (Service Design) ;</li>
+<li>La <strong>transition</strong> des services (Service Transition) ;</li>
+<li><strong>L’exploitation</strong> des services (Service Operation) ;</li>
+<li><strong>L’amélioration continue</strong> des services. (Continual Service Improvement).</li>
+</ol>
+<p>Dans le chapitre suivant, je vous présenterai en détail les différentes phases du cycle de vie d’un service.</p>
+<p>Ces cinq phases seront centrale à tout le cours, mais nous allons nous arrêter là pour l’instant. Maintenant que vous avez acquis le vocabulaire de base, il est temps de réunir toutes les pièces du puzzle.</p>
+<h4>En résumé</h4>
+<aside data-claire-semantic="information"><p></p>
+  <ul>
+  <li>Les concepts fondamentaux dans ITIL sont : <strong>processus, fonction, rôles, service et cycle de vie  d’un service</strong>. </li>
+  <li>Un processus est une suite d’activités coordonnées qui décrit comment réaliser une tâche pour atteindre un objectif.</li>
+  <li>Une <strong>fonction</strong> est une entité organisationnelle, un groupe de personnes qui <strong>exécutent les activités</strong> d’un processus.</li>
+  <li>Un <strong>rôle</strong> est un ensemble de <strong>responsabilités</strong> allouées à <strong>une fonction</strong>.</li>
+  <li>Une <strong>fonction</strong> peut se voir attribuer <strong>plusieurs rôles</strong>.</li>
+  <li>Un <strong>fournisseur</strong> produit de la valeur pour un client via un service.</li>
+  <li>Un <strong>service</strong> est un <strong>moyen de fournir de la valeur aux clients</strong>, en facilitant les résultats que les clients veulent atteindre sans en avoir la propriété des coûts et des risques.</li>
+  <li>Le <strong>cycle de vie d’un service</strong> définit les différentes phases par lesquelles passe un service : de sa naissance à son exploitation quotidienne (voir sa suppression).</li>
+  </ul>
+</aside>
+<p>Dans le chapitre suivant, vous découvrirez comment articuler les processus, fonctions et rôles au sein du cycle de vie d’un service.</p>
+<h3>Organisez le SI avec ITIL</h3>
+<aside data-claire-semantic="information"><p>Dans les chapitres précédents, vous avez appris que ITIL propose un
+  ensemble de bonnes pratiques et que ces bonnes pratiques offrent des
+  connaissances utiles dans la gestion d’un service IT. Vous avez aussi
+  acquis le vocabulaire normé de ce référentiel.</p>
+</aside>
+<p>Maintenant, il est temps de découvrir <strong>comment il s’articule autour de ses 4 concepts clés</strong> : les processus, les fonctions, les rôles et le cycle de vie d’un service.</p>
+<h4>Introduction</h4>
+<p>Imaginons que, suite à une migration de serveur, il n’y ait <strong>plus d’accès à la messagerie d’entreprise</strong>. Cela depuis déjà 2 bonnes heures🤷! En tant <strong>qu’administrateur système</strong>, vous êtes contacté par le helpdesk et vous commencez vos investigations. Très vite, vous vous apercevez que ce problème vient en fait d’une erreur de configuration. Le génie que vous êtes va se poser les questions suivantes 🤔 :</p>
+<ul>
+<li>Pourquoi le helpdesk a mis <strong>autant de temps</strong> à remonter l’incident alors que plus personne n’a accès aux mails ?</li>
+<li>L’équipe qui a effectué la migration a-t-elle <strong>testé la modification</strong> de configuration avant la mise en production ? </li>
+<li>Avions-nous <strong>besoin d’effectuer cette migration</strong> de serveur ?</li>
+<li>N’y avait-il pas un <strong>autre moyen</strong> d’offrir les nouvelles fonctionnalités attendues lors de cette migration ?</li>
+</ul>
+<p>Ce que votre esprit critique essaie de dire, c’est qu’il ne sert a rien de chercher à maintenir un service qui à été <strong>mal pensé et élaboré</strong>. Il faut se poser des questions en amont.</p>
+<p>Eh bien, c’est pour répondre à toutes ces préoccupations qu’a été introduit le concept de <strong>cycle de vie d’un service.</strong></p>
+<h4>Le cycle de vie d’un service</h4>
+<aside data-claire-semantic="information"><p>Le concept de cycle de vie d’un service est un élément fondamental depuis la mise à jour <strong>V3</strong>. Avant, ITIL était concentré sur la fourniture de service et le service support : Comment garantir la <strong>continuité</strong> du service ? Comment devons nous <strong>réagir face aux incidents</strong> ?</p>
+</aside>
+<p>Aujourd’hui, ITIL est <strong>aligné avec la stratégie du business</strong> (vous savez, l’équipe en costard-cravate qui commercialise le service). Il s’agit alors de fournir des processus de bout en bout (depuis le projet du service jusqu'à son exploitation… voir jusqu’à son décommissionnement).  </p>
+<ul>
+<li><strong>Pourquoi</strong> le client a t il besoin de ce service ?</li>
+<li><strong>Quel type</strong> de service fournir ?</li>
+<li><strong>Quelle solution</strong> mettre en œuvre ?</li>
+<li><strong>Comment l’exploiter</strong> au quotidien ?</li>
+</ul>
+<p>Comme je vous l’ai appris, ITIL propose 5 publications, dont <strong>chacune traite d’une phase</strong> du cycle de vie d’un service. Ces 5 phases fournissent l’orientation pour atteindre un standard de qualité.</p>
+<p>Voyons maintenant comment cela fonctionne concrètement, <strong>phase par phase</strong>, publication par publication.</p>
+<h4>Définissez la stratégie du service—<em>Service Strategy</em>—SS</h4>
+<aside data-claire-semantic="information"><p>C’est la toute première étape du cycle de vie d’un service. C’est ici que <strong>vous élaborez la direction stratégique du service</strong> grâce aux 5 processus qui la constituent.</p>
+</aside>
+<p>Les questions qu’on se pose à niveau sont : Quels <strong>besoins</strong> couvriront le service ? Comment fournir un service qui se <strong>différencie de l’existant</strong> ? Comment le service pourra <strong>créer de la valeur</strong> pour les utilisateurs ?</p>
+<p>Les 5 processus dans cette étape vont permettre de :</p>
+<ul>
+<li>gérer les <strong>exigences du business</strong> ;</li>
+<li>établir une <strong>stratégie de livraison</strong> du service ;</li>
+<li>valider les <strong>coûts directs et indirects</strong> engendrés par le service ;</li>
+<li>introduire le service dans un <strong>écosystème</strong> (le portefeuille de service).</li>
+</ul>
+<h4>Concevez le service—<em>Service Design</em>—SD</h4>
+<aside data-claire-semantic="information"><p>Une fois la stratégie établie, il est temps de démarrer la <strong>conception</strong> du service.</p>
+</aside>
+<p>On utilise ici 8 processus pour établir les exigences de niveaux de services, de disponibilité, capacité et de sécurité. Les activités décrites dans cette étape permettent de :</p>
+<ul>
+<li>établir les <strong>niveaux de services</strong> ;</li>
+<li>étudier la <strong>capacité nécessaire</strong> à la mise en oeuvre du service ;</li>
+<li>sélectionner les <strong>fournisseurs externes</strong> ;</li>
+<li>définir les <strong>exigences de disponibilité</strong> du service ;</li>
+<li>valider et établir les <strong>exigences de sécurité</strong> ;</li>
+<li>introduire le service dans le <strong>catalogue de services</strong>.</li>
+</ul>
+<p>Les questions qu’on se pose à niveau sont : <strong>Combien de serveurs</strong> me faudra-t-il ? <strong>Quelles solutions</strong> utiliser ? Devrais-je concevoir ou utiliser un <strong>fournisseur externe</strong> ? Quel niveau de <strong>disponibilité, de capacité du serveur</strong> dois-je prévoir ?</p>
+<p>A cette étape, vous avez réalisé ce qu’on appelle le <strong>SDP</strong>—<strong><em>Service Design Package</em></strong>, une documentation qui servira à concevoir et mettre en oeuvre votre service dans l’environnement de production.</p>
+<h4>Mettez en œuvre le service—<em>Service Transition</em>—ST</h4>
+<p>L’étape précédente a fourni une documentation complète sur le service à réaliser. Il faut maintenant se retrousser les manches, car <strong>le service est prêt à être mis en oeuvre</strong>.</p>
+<aside data-claire-semantic="information"><p>Maintenant que toutes les questions pratiques auront été couvertes, vous allez <strong>concevoir, tester et déployer le service</strong> dans l’environnement de production.</p>
+</aside>
+<p>Dans cette 3<sup>ème</sup> étape, 7 processus vont permettre de :</p>
+<ul>
+<li>mettre en place le <strong>plan de déploiement</strong> ;</li>
+<li><strong>évaluer, approuver, et mettre en oeuvre le changement</strong> (création, modification, mise à jour, décommissionnement) ;</li>
+<li><strong>tester le service</strong> dans un environnement de test ;</li>
+<li><strong>documenter le service</strong> ;</li>
+<li><strong>intégrer ses composants et leurs relations</strong> dans la base données des éléments de configurations ;</li>
+<li><strong>déployer le service</strong> dans l’environnement de production ;</li>
+<li>et enfin <strong>évaluer la mise en production</strong> effectuée.</li>
+</ul>
+<p>Vous passez donc des plans, à la mise en production de votre service. Au terme de cette étape, <strong>le service sera désormais accessible aux utilisateurs</strong>.</p>
+<p>Bravo, vous venez de créer une <em>business value</em>. Il va donc falloir <strong>maintenir</strong> cette business value au quotidien. Cela nous mène à la quatrième étape du cycle de vie, <strong>l’exploitation des services</strong>.</p>
+<h4>Exploitez le service—<em>Service Operation</em>—SO</h4>
+<p>Ça y est. Vous avez déployé votre service, les utilisateurs l’utilisent, et là interviennent les incidents, les problèmes et les requêtes des utilisateurs. La vie de tous les jours quoi.</p>
+<aside data-claire-semantic="information"><p>Dans cette quatrième étape, vous coordonnez les activités pour
+  délivrer le service convenu aux utilisateurs.</p>
+</aside>
+<p>Les 5 processus qui contiennent cette phase permettent de :</p>
+<ul>
+<li>traiter les <strong>demandes des utilisateurs</strong> de ce service ;</li>
+<li><strong>gérer l'accès</strong> au service ;</li>
+<li><strong>surveiller les évènements et les alertes</strong> du service ;</li>
+<li><strong>gérer les incident</strong> liés qui perturbent le service en évitant des récurrences.</li>
+</ul>
+<p>C’est une étape très importante, car c’est ici que les utilisateurs perçoivent la <strong>qualité du service</strong>.</p>
+<p>Ça y est ? On a tout bon ? Oh que non. A un moment, il va falloir se remettre en cause. déterminer les forces et faiblesses de notre service, et l’améliorer.</p>
+<h4>Améliorez continuellement votre service—<em>Continual Service Improvement</em>—CSI</h4>
+<p>Aussi étrange que cela puisse paraître, cette étape constitue <strong>la dernière étape du cycle de vie des services</strong>. <strong>En réalité, elle est impliquée au cours de toutes les phases</strong>. Pour beaucoup, il s’agit du <strong>point de départ</strong> car elle permet d’effectuer un audit du service et d’en sortir les axes d’amélioration qui guideront l’amélioration de vos activités dans toutes les autres phases.</p>
+<p>Cette étape contient <strong>1 processus chargé de mesurer tous les autres processus</strong> de toutes les autres phases, et de documenter ces résultats. Les résultats de vos mesures vont serviront à évaluer la maturité des processus de tous les cycles. Souvenez vous, l’une des caractéristiques d’un processus, c’est qu'il est mesurable. Le reporting obtenu va ensuite vous servir d’entrée pour mettre en oeuvre un plan. <strong>Ce plan vous permettra d’améliorer les autres phases du cycle de vie du service.</strong></p>
+<aside data-claire-semantic="information"><p>♼ A bien y réfléchir, il s’agit d’une boucle (d'où le terme cycle). On se remet en question, on mesure l'efficacité et définit un nouveau standard de qualité à atteindre. Puis, on établit une stratégie, on lance la phase de conception. Voici présenté, le concept de cycle de vie d’un service.</p>
+</aside>
+<p><img src="https://lh3.googleusercontent.com/xzSdr0Y_0LW1jBhNSP0kgiuRRGCe4ZMIH0opnz7a2rvAbvZIQFSf9n5l9t9wuHMWCHy6mXf2d6GVtypIOE4Aw5MMdjlgzblt3_dMEEF_w24kYRlFk8uMCB2fdZYg2OlojtmFgG5R" alt="http://keryatec.com/wp-content/uploads/2016/09/itilv3.png" /><br />
+Image à modifier</p>
+<h4>Définissez qui fait quoi—Fonctions et Rôles</h4>
+<p>Rappelons-le, une <strong>fonction</strong> est une organisation structurelle : une équipe, un groupe ou encore un département. Un <strong>rôle</strong> est une responsabilité portée par une fonction. N’hésitez pas à relire le chapitre 2, si vous ne vous en souvenez plus !</p>
+<p>Comme vous avez pu le voir, toutes les publications ou phases du cycle de vie d’un service ont des processus correspondants. Plutôt que de préconiser l’emploi de 15 ingénieurs, 30 techniciens et 10 chefs de projets, <strong>ITIL propose 4 fonctions principales</strong> qui pourront supporter les rôles nécessaires à l’exécution des processus.</p>
+<p>Il s’agit entre autres des fonctions suivantes :</p>
+<ul>
+<li>Le <strong><em>Service Desk</em></strong> ou <strong>centre de service</strong>. C’est le point focal des utilisateurs du service. Il <strong>recueille tous les besoins des utilisateurs</strong> du service (incidents, demandes diverses).</li>
+<li><strong>L’exploitation ou la gestion des opérations</strong>. C’est ici que le service est exploité (sauvegarde, supervision, surveillance, gestion des moyens généraux IT).</li>
+<li>Le <strong>gestion technique</strong></li>
+<li>Le <strong>gestion applicative</strong></li>
+</ul>
+<p>Les fonctions du <strong>Service Desk</strong> et la <strong>gestion des opérations</strong> fournissent les ressources nécessaires à la phase d’exploitation des services. La <strong>gestion technique</strong> et la <strong>gestion applicative</strong> endossent les fonctions dans <strong>toutes les phases</strong> du cycle de vie du service.</p>
+<h4>En résumé</h4>
+<p>ITIL recommande de <strong>structurer la gestion d’un service IT</strong> avec ce qu’il appelle <strong>l’approche par le cycle de vie d’un service</strong>.</p>
+<ul>
+<li>Le cycle de vie d’un service est le cadre organisationnel, il est constitué de 5 étapes.</li>
+<li>Chaque publication ITIL traite d’une étape du cycle de vie d’un service.</li>
+<li>Chacun de ses 5 livres décrit en détail les processus (26 processus au total)  qui répondent à la problématique en objet de l’étape du cycle de vie.</li>
+<li>Un <strong>processus</strong> est un <strong>ensemble d’activités</strong> à exécuter pour effectuer pour atteindre un objectif.</li>
+<li>Certains processus couvrent <strong>plusieurs phases</strong> du cycle de vie des services.</li>
+<li>Enfin, ITIL décrit les 4 fonctions principales qui supporteront les rôles nécessaires à l’exécution des activités contenues dans ces processus.</li>
+</ul>
+<p>Vous avez désormais une vision d'ensemble de l'utilisté d'ITIL, comment il est structuré, et à quoi il sert. Dans la prochaine partie, je vous propose d’apprendre à garder le contrôle de votre SI en établissant une procédure opérationnelle de gestion des changements.</p>
+<p>Ceci est <a href="https://assets.nagios.com/downloads/nagiosxi/docs/Installing-Nagios-XI-Manually-on-Linux.pdf">un lien de test</a>, voilà.</p>
+
+<!-- ===== COPY HTML TO HERE ===== -->
+</div></div>
+
+<div id="toc"></div>
+<div id="dialog-chapter-extract" style="display: none;">
+    <div class="projectContent small-course"><div class="course-content">
+        <div id="chapter-extract"></div>
+    </div></div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
