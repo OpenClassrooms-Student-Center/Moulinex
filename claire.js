@@ -7,6 +7,22 @@
      */
     var showdown_extension_claire = function () {
         /** Convert special blockquote to Claire info|warn|error block */
+        var blockquote_to_aside_simplified = {
+            type: 'output',
+            regex: /^<blockquote>$\s*<p>(\w+)\s*((.*\n*)+?)^<\/blockquote>/gm,
+            //regex: /^#(\w+)\s*((.*\n*)+?)^#end/gm,
+            replace: function (src, type, content) {
+                var dest_type =
+                    (type == 'information' || type == 'info') ? 'information' :
+                    (type == 'warning') ? 'warning' :
+                    (type == 'x' || type == 'error' ) ? 'error' :
+                    '';
+                return (dest_type != '')
+                    ? '<aside data-claire-semantic="' + dest_type + '"><p>' + content + '</aside>'
+                    : src;
+            }
+        };
+
         var blockquote_to_aside = {
             type: 'output',
             regex: /^<blockquote>$\s*<p><strong>(:\w+:)<\/strong>\s*((.*\n*)+?)^<\/blockquote>/gm,
