@@ -1,3 +1,21 @@
+var stackEdit = true;
+
+function updateStackEditValue() {
+    stackEdit = jQuery("#stackedit-option").is(":checked");
+}
+
+jQuery(document).ready(function() {
+    updateStackEditValue();
+});
+
+
+function cleanContent() {
+    document.getElementById("html-course").innerText = "";
+    document.getElementById("course-content").innerHTML = "";
+    document.getElementById("toc").innerHTML = "<span class=\"ui-icon ui-icon-close\" onclick=\"jQuery('#toc').hide()\"></span>";
+    document.getElementById("dialog-chapter-extract").innerHTML = "<div class=\"projectContent small-course\"><div class=\"course-content\"><div id=\"chapter-extract\"></div></div></div>";
+}
+
 /**
 * Open the file selected by the user 
 * and convert its content to print it on the page.
@@ -5,6 +23,8 @@
 var openFile = function(event) {
     var input = event.target;
     var md_content;
+
+    cleanContent();
     
     var reader = new FileReader();
 
@@ -33,6 +53,14 @@ var openFile = function(event) {
 };
 
 
+function removeStackEditTag(ochtmlAsString) {
+    var regex = /<!--stackedit_data:(.|\n)*-->/;
+
+    ochtmlAsString = ochtmlAsString.replace(regex, "");
+    return ochtmlAsString;
+}
+
+
 /**
 * Convert the input markdown text into OpenClassrooms compliant HTML.
 * This results in the HTML code you can copy-paste to your course.
@@ -47,6 +75,9 @@ function convert_md_to_ochtml(text_md) {
     });
 
     var ochtml = converter.makeHtml(text_md);
+    if (stackEdit) {
+        ochtml = removeStackEditTag(ochtml);
+    }
     return ochtml;
 }
 

@@ -4,6 +4,7 @@
     <title>Moulinex — Convert your course here</title>
     <meta name="description" content="Sur cette page, vous pouvez convertir votre cours Markdown en HTML compatible pour les cours sur la plateforme OpenClassrooms." />
     <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js"></script>
     <script type="text/javascript" src="moulinex.js"></script>
     <script src="claire.js"></script>
@@ -21,12 +22,15 @@
     <h1 class="hide-from-toc">Moulinex - Translate your Markdown course into an OC HTML course</h1>
     <input type='file' accept='text/plain' onchange='openFile(event)' multiple><br>
     <output id="list"></output>
-
-
+    <br>
+    <button onclick="cleanContent()">Clean content</button>
+    <br><br>
+    StackEdit<input id="stackedit-option" type="checkbox" onclick="updateStackEditValue()" checked><br>
+    <p>If your course was written on StackEdit, you want to check this box to automatically remove the stackedit tag at the end of the file.</p>
+    <br>
     <div class="raw-html">
       <p id="html-course">This is going to be the raw HTML of you course that you will be able to copy and paste to your course page. You can use the copy button on the left.</p>
     </div>
-
 
     <button class="copy-button" onclick="copyTextToClipboard()">
       <i class="copy-icon fas fa-copy"></i>
