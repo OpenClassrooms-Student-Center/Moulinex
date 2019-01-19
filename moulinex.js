@@ -22,11 +22,7 @@ function cleanContent() {
 **/
 var openFile = function(event) {
     var input = event.target;
-    var md_content;
-
     cleanContent();
-    
-    var reader = new FileReader();
 
     var md_content = "";
     var html_course;
