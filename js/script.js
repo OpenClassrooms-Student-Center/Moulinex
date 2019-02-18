@@ -30,6 +30,7 @@ function extractChapter() {
 }
 
 function extractToC() {
+    console.log("toc called");
     var $toc = jQuery("#toc");
     $toc.resizable();
     var lastLevel = 0;
@@ -84,4 +85,22 @@ function showChapter(id) {
     jQuery("#chapter-extract").append($chapter.clone());
     jQuery('body > .projectContent:first').first().hide();
     jQuery("#dialog-chapter-extract").dialog('option', 'title', $chapter.prev().html()).dialog('open');
+}
+
+
+
+function toggleToc() {
+    tocElement = jQuery('#toc');
+    toggleTocButton = jQuery('#toggleTocButton');
+
+    if(tocElement.hasClass('hide')) {
+        toggleTocButton.addClass('ui-icon-caret-1-e');
+        toggleTocButton.removeClass('ui-icon-caret-1-w');
+        tocElement.removeClass('hide');
+    } 
+    else {
+        toggleTocButton.addClass('ui-icon-caret-1-w');
+        toggleTocButton.removeClass('ui-icon-caret-1-e');
+        tocElement.addClass('hide');
+    }
 }

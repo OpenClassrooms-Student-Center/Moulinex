@@ -1,4 +1,5 @@
 var stackEdit = true;
+var md_content;
 
 function updateStackEditValue() {
     stackEdit = jQuery("#stackedit-option").is(":checked");
@@ -12,47 +13,44 @@ jQuery(document).ready(function() {
 function cleanContent() {
     document.getElementById("html-course").innerText = "";
     document.getElementById("course-content").innerHTML = "";
-    document.getElementById("toc").innerHTML = "<span class=\"ui-icon ui-icon-close\" onclick=\"jQuery('#toc').hide()\"></span>";
+    document.getElementById("toc").innerHTML = "<span id='toggleTocButton' class=\"ui-icon ui-icon-caret-1-e\" onclick=\"toggleToc()\"></span>";
     document.getElementById("dialog-chapter-extract").innerHTML = "<div class=\"projectContent small-course\"><div class=\"course-content\"><div id=\"chapter-extract\"></div></div></div>";
+    md_content = "";
 }
 
 /**
 * Open the file selected by the user 
 * and convert its content to print it on the page.
 **/
-var openFile = function(event) {
-    var input = event.target;
-    var md_content;
-
+function openFiles(event) {
+    var filelist = document.getElementById('files').files;
     cleanContent();
-    
-    var reader = new FileReader();
 
-    var md_content = "";
-    var html_course;
-    var reader = new FileReader();  
-    function readFile(index) {
-        if( index >= input.files.length ) return;
-        var file = input.files[index];
-        reader.onload = function(e) {  
-            // get file content 
-            md_content += e.target.result + "\n\n";
-
-            readFile(index+1);
-
-            html_course = convert_md_to_ochtml(md_content);
-            document.getElementById('html-course').innerText = html_course;
-            document.getElementById('course-content').innerHTML = html_course;
-        }
-        reader.readAsText(file);
+    for(var i=0; i<filelist.length; i++)
+    {
+        convertFile(filelist[i]);
     }
-    readFile(0);
 
-    setTimeout(loadContent, 1000);
+    setTimeout(loadContent, 500); // To load the table of content
+}
 
-};
+function convertFile(file) {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+        var md_content = reader.result + "\n\n";
 
+        document.getElementById('html-course').innerText += convert_md_to_ochtml(md_content);
+        document.getElementById('course-content').innerHTML += convert_md_to_ochtml(md_content);
 
+    }
+    reader.readAsText(file, "UTF-8");
+}
+
+/**
+* When using StackEdit (online markdown editor), you may have a tag left at the
+* end of the file. This will automatically delete it.
+**/
 function removeStackEditTag(ochtmlAsString) {
     var regex = /<!--stackedit_data:(.|\n)*-->/;
 
@@ -74,11 +72,12 @@ function convert_md_to_ochtml(text_md) {
         extensions: ['claire'],
     });
 
-    var ochtml = converter.makeHtml(text_md);
-    if (stackEdit) {
-        ochtml = removeStackEditTag(ochtml);
+    if (stackEdit) {        
+        return removeStackEditTag(converter.makeHtml(text_md));
     }
-    return ochtml;
+    else {
+        return converter.makeHtml(text_md);
+    }
 }
 
 

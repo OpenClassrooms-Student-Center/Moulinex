@@ -20,3 +20,13 @@
 	height:150px;
 	overflow-y: scroll;
 }
+
+
+#toc.hide > ol {
+	display: none;
+}
+
+
+#toc {
+	background-color: white;
+}
